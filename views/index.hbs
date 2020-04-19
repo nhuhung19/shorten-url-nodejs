@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container w-100 h-100">
+    <h1 class="text-center">Welcome to Shorten Url</h1>
+
+    <form class="my-5" action="/shorten" method="POST">
+      <div class="form-group">
+        <input required type="text" class="form-control" name="longUrl" id="exampleInputText"
+          placeholder="super long url" aria-describedby="textHelp">
+      </div>
+      <button type="submit" class="btn btn-primary">Shorten</button>
+    </form>
+    {{#if url}}
+    <div class="w-100 h-100 d-flex justify-content-center">
+      <div>
+        <table class="table table-striped table-responsive w-100 ">
+          <thead>
+            <tr>
+              <th>Full Url</th>
+              <th>Short Url</th>
+            </tr>
+          </thead>
+
+          {{#each url}}
+          <tbody>
+            <tr>
+              <td><a href="{{{currentUrl}}}">{{{currentUrl}}}</a></td>
+              <td><a href="{{{shortUrl}}}">{{{shortUrl}}}</a></td>
+            </tr>
+          </tbody>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<form action="/shorten" method="POST">
+  <div class="form-group">
+    <input type="text" class="form-control" name="longUrl" id="exampleInputText" placeholder="super long url" aria-describedby="textHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Shorten</button>
+</form>
+
+{{#if newUrl}}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <a href="{{{currentUrl}}}">{{{currentUrl}}}</a> ||<strong><a href="{{{shortUrl}}}">{{{shortUrl}}}</a></strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
